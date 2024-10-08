@@ -1,23 +1,7 @@
-declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
+export declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
     name: "users";
     schema: undefined;
     columns: {
-        id: import("drizzle-orm/pg-core").PgColumn<{
-            name: "id";
-            tableName: "users";
-            dataType: "string";
-            columnType: "PgUUID";
-            data: string;
-            driverParam: string;
-            notNull: true;
-            hasDefault: true;
-            isPrimaryKey: true;
-            isAutoincrement: false;
-            hasRuntimeDefault: false;
-            enumValues: undefined;
-            baseColumn: never;
-            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
-        }, {}, {}>;
         username: import("drizzle-orm/pg-core").PgColumn<{
             name: "username";
             tableName: "users";
@@ -82,6 +66,22 @@ declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
             baseColumn: never;
             generated: import("drizzle-orm").GeneratedColumnConfig<string>;
         }, {}, {}>;
+        id: import("drizzle-orm/pg-core").PgColumn<{
+            name: "id";
+            tableName: "users";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: true;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
         createdAt: import("drizzle-orm/pg-core").PgColumn<{
             name: "createdAt";
             tableName: "users";
@@ -117,4 +117,9 @@ declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
     };
     dialect: "pg";
 }>;
-export default users;
+export declare const userRelations: import("drizzle-orm").Relations<"users", {
+    profile: import("drizzle-orm").One<"profiles", false>;
+    posts: import("drizzle-orm").Many<"posts">;
+    comments: import("drizzle-orm").Many<"comments">;
+    userToGroup: import("drizzle-orm").Many<"user_to_group">;
+}>;

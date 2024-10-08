@@ -8,7 +8,6 @@ import { JwtService } from '@nestjs/jwt';
 import { isArray } from 'class-validator';
 import { Request } from 'express';
 import { RedisService } from 'src/redis.service';
-import { ClaimsPayload } from 'src/types';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

@@ -8,7 +8,7 @@ import {
   MinLength,
 } from 'class-validator';
 import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
-import { users } from 'src/schemas';
+import { users } from 'src/database/schemas';
 import { ApiProperty } from '@nestjs/swagger';
 
 export type TUser = InferSelectModel<typeof users>;

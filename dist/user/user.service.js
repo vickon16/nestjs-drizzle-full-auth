@@ -18,14 +18,16 @@ const bcrypt = require("bcrypt");
 const drizzle_orm_1 = require("drizzle-orm");
 const constant_1 = require("../constant");
 const redis_service_1 = require("../redis.service");
-const schema = require("../schemas");
+const schema = require("../database/schemas");
 let UserService = class UserService {
     constructor(db, redis) {
         this.db = db;
         this.redis = redis;
     }
     async getUsers() {
-        return this.db.query.users.findMany();
+        return this.db.query.users.findMany({
+            with: { profile: true, comments: true, posts: true },
+        });
     }
     async getUserBy(payload, by) {
         let user;

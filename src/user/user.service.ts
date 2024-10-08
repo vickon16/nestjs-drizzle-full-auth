@@ -10,7 +10,7 @@ import { eq } from 'drizzle-orm';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import { DATABASE_CONNECTION } from 'src/constant';
 import { RedisService } from 'src/redis.service';
-import * as schema from 'src/schemas';
+import * as schema from 'src/database/schemas';
 import { CreateUserDto, TUser, UpdateUserDto } from './user.dto';
 
 @Injectable()
@@ -22,7 +22,9 @@ export class UserService {
   ) {}
 
   async getUsers() {
-    return this.db.query.users.findMany();
+    return this.db.query.users.findMany({
+      with: { profile: true, comments: true, posts: true },
+    });
   }
 
   async getUserBy(payload: string, by: 'id' | 'email') {

@@ -1,0 +1,107 @@
+export declare const posts: import("drizzle-orm/pg-core").PgTableWithColumns<{
+    name: "posts";
+    schema: undefined;
+    columns: {
+        title: import("drizzle-orm/pg-core").PgColumn<{
+            name: "title";
+            tableName: "posts";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        content: import("drizzle-orm/pg-core").PgColumn<{
+            name: "content";
+            tableName: "posts";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        userId: import("drizzle-orm/pg-core").PgColumn<{
+            name: "userId";
+            tableName: "posts";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        id: import("drizzle-orm/pg-core").PgColumn<{
+            name: "id";
+            tableName: "posts";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: true;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        createdAt: import("drizzle-orm/pg-core").PgColumn<{
+            name: "createdAt";
+            tableName: "posts";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<Date>;
+        }, {}, {}>;
+        updatedAt: import("drizzle-orm/pg-core").PgColumn<{
+            name: "updatedAt";
+            tableName: "posts";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<Date>;
+        }, {}, {}>;
+    };
+    dialect: "pg";
+}>;
+export declare const postsRelations: import("drizzle-orm").Relations<"posts", {
+    user: import("drizzle-orm").One<"users", true>;
+    comments: import("drizzle-orm").Many<"comments">;
+}>;

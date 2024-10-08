@@ -1,0 +1,90 @@
+export declare const profiles: import("drizzle-orm/pg-core").PgTableWithColumns<{
+    name: "profiles";
+    schema: undefined;
+    columns: {
+        metadata: import("drizzle-orm/pg-core").PgColumn<{
+            name: "metadata";
+            tableName: "profiles";
+            dataType: "json";
+            columnType: "PgJsonb";
+            data: unknown;
+            driverParam: unknown;
+            notNull: false;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<unknown>;
+        }, {}, {}>;
+        userId: import("drizzle-orm/pg-core").PgColumn<{
+            name: "userId";
+            tableName: "profiles";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        id: import("drizzle-orm/pg-core").PgColumn<{
+            name: "id";
+            tableName: "profiles";
+            dataType: "string";
+            columnType: "PgUUID";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: true;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<string>;
+        }, {}, {}>;
+        createdAt: import("drizzle-orm/pg-core").PgColumn<{
+            name: "createdAt";
+            tableName: "profiles";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<Date>;
+        }, {}, {}>;
+        updatedAt: import("drizzle-orm/pg-core").PgColumn<{
+            name: "updatedAt";
+            tableName: "profiles";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            generated: import("drizzle-orm").GeneratedColumnConfig<Date>;
+        }, {}, {}>;
+    };
+    dialect: "pg";
+}>;
+export declare const profileRelations: import("drizzle-orm").Relations<"profiles", {
+    user: import("drizzle-orm").One<"users", true>;
+}>;

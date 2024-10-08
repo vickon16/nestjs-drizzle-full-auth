@@ -12,7 +12,7 @@ const config_1 = require("@nestjs/config");
 const constant_1 = require("../constant");
 const pg_1 = require("pg");
 const node_postgres_1 = require("drizzle-orm/node-postgres");
-const schema = require("../schemas");
+const schema = require("./schemas");
 let DatabaseModule = class DatabaseModule {
 };
 exports.DatabaseModule = DatabaseModule;

@@ -36,9 +36,6 @@ let AuthController = class AuthController {
         await this.authService.logout(req.claims.sub);
         return { message: 'Logged out successfully' };
     }
-    async getProfile(req) {
-        return await this.userService.getUserBy(req.claims.sub, 'id');
-    }
 };
 exports.AuthController = AuthController;
 __decorate([
@@ -72,14 +69,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "logout", null);
-__decorate([
-    (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
-    (0, common_1.Get)('profile'),
-    __param(0, (0, common_1.Request)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], AuthController.prototype, "getProfile", null);
 exports.AuthController = AuthController = __decorate([
     (0, swagger_1.ApiTags)('auth'),
     (0, common_1.Controller)('auth'),

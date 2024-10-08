@@ -1,7 +1,4 @@
-import { InferSelectModel } from 'drizzle-orm';
-import { users } from 'src/schemas';
-
-type ClaimsPayload = {
+declare type ClaimsPayload = {
   username: string;
   sub: string;
   email: string;

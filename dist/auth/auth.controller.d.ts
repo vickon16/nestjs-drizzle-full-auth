@@ -15,13 +15,4 @@ export declare class AuthController {
     logout(req: any): Promise<{
         message: string;
     }>;
-    getProfile(req: any): Promise<{
-        id: string;
-        username: string;
-        email: string;
-        phone: string;
-        password: string;
-        createdAt: Date;
-        updatedAt: Date;
-    }>;
 }

@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  Get,
   HttpCode,
   HttpStatus,
   Post,
@@ -48,11 +47,5 @@ export class AuthController {
   async logout(@Request() req) {
     await this.authService.logout(req.claims.sub);
     return { message: 'Logged out successfully' };
-  }
-
-  @UseGuards(AuthGuard)
-  @Get('profile')
-  async getProfile(@Request() req) {
-    return await this.userService.getUserBy(req.claims.sub, 'id');
   }
 }

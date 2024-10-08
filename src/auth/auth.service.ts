@@ -7,7 +7,6 @@ import { JwtService } from '@nestjs/jwt';
 import { UserService } from 'src/user/user.service';
 import { LoginDto } from './auth.dto';
 import * as bcrypt from 'bcrypt';
-import { ClaimsPayload } from 'src/types';
 import { RedisService } from 'src/redis.service';
 import { TUser } from 'src/user/user.dto';
 
